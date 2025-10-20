@@ -16,7 +16,7 @@ body::-webkit-scrollbar {
 
 
 header .main {
-    background-image: url(assets/images/backgraound\ image.jpg);
+    background-image: url(/assets/images/backgraound\ image.jpg);
     height: 106vh;
     width: 100vw;
     margin: auto;
@@ -215,7 +215,7 @@ header .main .heading .mail button .btn-b {
     height: 80px;
     width: 100%;
     z-index: 10;
-    bottom: -110px;
+    bottom: -105px;
     margin-top: 5px;
     background: radial-gradient(60% 500% at 50% -420%,
             rgba(64, 97, 231, 0.4) 80%,
@@ -889,5 +889,23 @@ footer .se-4 {
     footer .se-3 .lang .lang-arrow{
         top: 9px;
         right: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-cover {
+        height: 50vh;
+    }
+    
+    .heading {
+        padding: 20px;
+    }
+    
+    .mail {
+        flex-direction: column;
+    }
+    
+    .btn-1 {
+        width: 100%;
     }
 }
