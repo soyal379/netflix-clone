@@ -4,9 +4,9 @@
     font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif
 }
 
-body {
+/* body {
     background-color: black;
-}
+} */
 
 body::-webkit-scrollbar {
     display: none;
@@ -17,7 +17,7 @@ body::-webkit-scrollbar {
 
 header .main {
     background-image: url(/assets/images/backgraound\ image.jpg);
-    height: 106vh;
+    height: 100vh;
     width: 100vw;
     margin: auto;
     background-position: center center;
@@ -28,7 +28,7 @@ header .main {
 
 
 header .main nav {
-    max-width: 85vw;
+    max-width: 83vw;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -51,7 +51,7 @@ header .main nav .btn {
 }
 
 header .main nav .btn .lang {
-    z-index: 2;
+    z-index: 3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,6 +81,11 @@ header .main nav .btn .lang select option {
     color: initial;
 }
 
+header .main nav .btn .lang select[value="english"] {
+    font-weight: 900;
+    color: violet;
+}
+
 header .main nav .btn .lang .lang-arrow {
     color: white;
     z-index: 2;
@@ -102,7 +107,7 @@ header .main nav .btn .btn-1 {
 
 header .main .main-cover {
     background-color: black;
-    height: 106vh;
+    height: 100vh;
     width: 100vw;
     opacity: 0.74;
     position: absolute;
@@ -114,30 +119,47 @@ header .main .heading {
     position: relative;
     z-index: 2;
     color: aliceblue;
-    width: 40%;
-    height: 80%;
+    width: 100vw;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    margin: 55px auto 20px auto;
-
 }
 
-header .main .heading .sp-1 {
+header .main .heading .h-min-h{
+    max-width: 600px;
+    margin: 50px auto 10px auto;
+    border: 1px solid red;
+}
+
+header .main .heading .h-min-h .h-div {
+    border: 1px solid blue;
+}
+
+
+header .main .heading .h-div .sp-1 {
     font-size: 54px;
     font-weight: 900;
     width: 90%;
 }
 
-header .main .heading .sp-2 {
+header .main .heading .h-div .sp-2 {
     font-weight: 700;
     font-size: 20px;
     margin-top: 20px;
     color: rgb(234, 234, 234);
 }
 
-header .main .heading .sp-3 {
+header .main .heading form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid green;
+}
+
+header .main .heading .h-div .sp-3 {
     margin-top: 35px;
     font-size: 15px;
     font-weight: 600;
@@ -212,31 +234,37 @@ header .main .heading .mail button .btn-b {
 
 #sepreation {
     position: absolute;
-    height: 80px;
-    width: 100%;
+    height: 120px;
+    width: 100vw;
     z-index: 10;
-    bottom: -105px;
+    bottom: -100px;
     margin-top: 5px;
     background: radial-gradient(60% 500% at 50% -420%,
             rgba(64, 97, 231, 0.4) 80%,
             rgba(0, 0, 0, 0.1) 100%), black;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    transition: all 0.3s ease-in-out;
+    left: 0;
+    right: 0;
 }
 
 .curve {
     position: relative;
     z-index: 3;
-    bottom: 30px;
-    height: 80px;
+    bottom: 0;
+    height: 120px;
+    width: 100vw;
     background: linear-gradient(to right,
             rgba(33, 13, 22, 1) 16%,
             rgba(184, 40, 105, 1),
             rgba(229, 9, 20, 1),
             rgba(184, 40, 105, 1),
             rgba(33, 13, 22, 1) 84%);
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    transition: all 0.3s ease-in-out;
+    margin-top: -40px;
 }
 
 main {
@@ -296,12 +324,10 @@ main .se-2 .trend-scrol {
     width: 80vw;
     margin: auto;
     border-radius: 20px;
-    /* border: 2px solid red; */
 }
 
 main .se-2 .trend-scrol ul {
     display: flex;
-    /* border: 2px solid green; */
     overflow: scroll;
     scrollbar-width: none;
 }
@@ -896,16 +922,311 @@ footer .se-4 {
     .main-cover {
         height: 50vh;
     }
-    
-    .heading {
-        padding: 20px;
+}
+    /* Media Queries for Responsive Design */
+/* Enhanced Media Queries */
+@media screen and (max-width: 1400px) {
+    main .cont-2 {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+    }
+
+    footer .se-2 {
+        margin: 10px 80px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    header .main nav {
+        max-width: 95vw;
     }
     
-    .mail {
-        flex-direction: column;
+    header .main .heading .sp-1 {
+        font-size: 48px;
     }
-    
-    .btn-1 {
+
+    main .cont-2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    main .se-2 .trend-scrol {
+        width: 90vw;
+    }
+
+    footer .se-1 .mail-2 input {
+        width: 450px;
+    }
+
+    #sepreation {
+        height: 100px;
+        bottom: -50px;
+        background: radial-gradient(70% 500% at 50% -400%,
+            rgba(64, 97, 231, 0.4) 80%,
+            rgba(0, 0, 0, 0.1) 100%), black;
+    }
+
+    .curve {
+        height: 100px;
+        margin-top: -35px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    main {
+        width: 90vw;
+    }
+
+    main .se-2 .trend-scrol ul li button img {
+        width: 180px;
+    }
+
+    main .cont-2 {
+        width: 90vw;
+    }
+
+    footer .se-2 {
+        margin: 10px 40px;
+    }
+
+    footer .se-2 .service-main {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header .main {
+        height: 90vh;
+    }
+
+    header .main .main-cover {
+        height: 90vh;
+    }
+
+    header .main nav span img {
+        width: 120px;
+    }
+
+    header .main .heading .sp-1 {
+        font-size: 36px;
         width: 100%;
+    }
+
+    header .main .heading .sp-2 {
+        font-size: 18px;
+    }
+
+    header .main .heading .mail {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .main .heading .mail .mail-input {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    header .main .heading .mail button {
+        width: 90%;
+        max-width: 350px;
+        font-size: 20px;
+    }
+
+    #sepreation {
+        height: 80px;
+        bottom: -40px;
+        background: radial-gradient(80% 500% at 50% -380%,
+            rgba(64, 97, 231, 0.4) 80%,
+            rgba(0, 0, 0, 0.1) 100%), black;
+    }
+
+    .curve {
+        height: 80px;
+        margin-top: -30px;
+    }
+
+    main .cont-2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 95vw;
+    }
+
+    main .se-2 .trend-scrol {
+        width: 95vw;
+    }
+
+    main .se-2 .trend-scrol ul li button img {
+        width: 160px;
+    }
+
+    main .se-4 .faq {
+        font-size: 20px;
+        padding: 20px 15px;
+    }
+
+    footer .se-1 .mail-2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    footer .se-1 .mail-2 input {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    footer .se-1 .mail-2 button {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    footer .se-2 {
+        margin: 10px 20px;
+    }
+
+    footer .se-2 .service-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header .main {
+        height: 70vh;
+    }
+
+    header .main .main-cover {
+        height: 70vh;
+    }
+
+    header .main nav {
+        padding-top: 1em;
+    }
+
+    header .main nav .btn {
+        gap: 5px;
+    }
+
+    #sepreation {
+        height: 60px;
+        bottom: -30px;
+        background: radial-gradient(90% 500% at 50% -350%,
+            rgba(64, 97, 231, 0.4) 80%,
+            rgba(0, 0, 0, 0.1) 100%), black;
+    }
+
+    .curve {
+        height: 60px;
+        margin-top: -25px;
+    }
+
+    header .main nav span img {
+        width: 90px;
+    }
+
+    header .main nav .btn .lang select {
+        padding: 4px 18px 4px 22px;
+        font-size: 12px;
+    }
+
+    header .main nav .btn .btn-1 {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    header .main .heading {
+        margin: 30px auto;
+    }
+
+    header .main .heading .sp-1 {
+        font-size: 26px;
+    }
+
+    header .main .heading .sp-2 {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    header .main .heading .sp-3 {
+        font-size: 14px;
+        margin-top: 25px;
+    }
+
+    main {
+        width: 95vw;
+    }
+
+    main .se-1 .trend h3 {
+        font-size: 20px;
+    }
+
+    main .se-2 .trend-scrol ul li {
+        padding: 10px;
+    }
+
+    main .se-2 .trend-scrol ul li button img {
+        width: 140px;
+    }
+
+    main .se-2 .trend-scrol ul li button .number {
+        font-size: 60px;
+        top: 120px;
+        left: -15px;
+    }
+
+    main .cont {
+        font-size: 20px;
+        margin: 60px 10px 20px;
+    }
+
+    main .se-4 .faq {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    footer .se-1 {
+        margin: 40px 0;
+    }
+
+    footer .se-2 {
+        margin: 10px;
+    }
+
+    footer .se-2 p {
+        font-size: 14px;
+    }
+
+    footer .se-2 .service-main {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    footer .se-3 .lang {
+        margin: 40px 10px;
+    }
+}
+
+/* Small phone optimization */
+@media screen and (max-width: 360px) {
+    header .main nav span img {
+        width: 80px;
+    }
+
+    header .main .heading .sp-1 {
+        font-size: 24px;
+    }
+
+    main .se-2 .trend-scrol ul li button img {
+        width: 120px;
+    }
+
+    main .se-2 .trend-scrol ul li button .number {
+        font-size: 50px;
+        top: 100px;
+        left: -12px;
+    }
+
+    footer .se-1 .mail-2 button {
+        font-size: 18px;
     }
 }
